@@ -173,9 +173,9 @@ For every Python project, install these skills:
 Use these commands:
 
 ```bash
-npx skills add https://skills.sh/astral-sh/claude-code-plugins/ruff
-npx skills add https://skills.sh/astral-sh/claude-code-plugins/uv
-npx skills add https://skills.sh/astral-sh/claude-code-plugins/ty
+npx skills add https://github.com/astral-sh/claude-code-plugins --skill ruff
+npx skills add https://github.com/astral-sh/claude-code-plugins --skill uv
+npx skills add https://github.com/astral-sh/claude-code-plugins --skill ty
 ```
 
 This applies to:
