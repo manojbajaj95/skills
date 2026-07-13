@@ -7,6 +7,7 @@ description: >-
   work in this repo" when wiki/ exists, deep-wiki style docs, or keep the wiki
   in sync — never wipe an existing wiki; prefer small incremental edits. Also
   use when installing CI that runs wiki update on push.
+disable-model-invocation: true
 ---
 
 # Wiki
