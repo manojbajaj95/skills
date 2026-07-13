@@ -1,0 +1,15 @@
+# .wikiignore — paths the wiki must not read during init, update, or ask source verification.
+#
+# Rules:
+# 1. Never read any path matched by .gitignore (treat .gitignore as part of this ignore set).
+# 2. Never read the paths listed below, even if they are not in .gitignore.
+# 3. Placeholder-only config (e.g. .env.example) is OK when it contains no secrets.
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Agent / IDE local config (not repo knowledge)
+.agents/
+.cursor/

@@ -15,7 +15,7 @@ The wiki is a directory of markdown files. Two filenames are **reserved** at eve
 
 Every other `.md` file is a **concept page** and MUST have YAML frontmatter with a non-empty `type` field — except ephemeral workflow scratch files (see `_plan.md` below).
 
-**Security:** Never read or document secret values, credentials, private keys, tokens, or `.env` files. `.env.example` / sample configs are OK only with placeholders.
+**Security:** Respect repo-root `.wikiignore` and all `.gitignore` patterns ([wikiignore.md](wikiignore.md)). Never read or document secret values, credentials, private keys, tokens, or `.env` files. `.env.example` / sample configs are OK only with placeholders.
 
 ### `_plan.md` (ephemeral, not reserved)
 

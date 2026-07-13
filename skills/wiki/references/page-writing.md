@@ -8,7 +8,7 @@ For each **concept** page (not `index.md` / `log.md`):
 
 ### Read the relevant code
 
-Open and read the actual source files for the section you are writing. Do not guess or hallucinate file contents. If a file is too large, read the parts that matter for the current section.
+Open and read the actual source files for the section you are writing. Skip paths excluded by `.wikiignore` and `.gitignore` ([wikiignore.md](wikiignore.md)). Do not guess or hallucinate file contents. If a file is too large, read the parts that matter for the current section.
 
 ### Write frontmatter and prose
 

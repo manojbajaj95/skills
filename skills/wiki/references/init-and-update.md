@@ -29,7 +29,7 @@ Map: purpose, major subsystems, key data flows, external dependencies, build/tes
 
 **Coverage:** Classify subsystems into Tier 1 / 2 / 3 per [toc-and-layout.md — Subsystem coverage tiers](toc-and-layout.md#subsystem-coverage-tiers-init). Prefer a maintainable first wiki over exhaustive coverage — lean toward fewer solid Tier 1 pages; expand Tier 2/3 later via **update**.
 
-**Security:** Never read `.env` or secret stores. Document only that config exists and where non-sensitive setup lives.
+**Ignore rules:** Read `.wikiignore` at repo root and respect all `.gitignore` patterns before opening source files ([wikiignore.md](wikiignore.md)). Never read `.env`, `.agents/`, `.cursor/`, or other excluded paths. Document only that config exists and where non-sensitive setup lives.
 
 Produce a compact **survey context** (repo summary, architecture, topics, patterns, glossary seeds, directory map) for later steps / sub-agents.
 
@@ -71,7 +71,7 @@ Follow [toc-and-layout.md](toc-and-layout.md) and [page-writing.md](page-writing
 3. FOUNDATION pages (sequential)
 4. LENS + DATA pages (parallel as needed)
 5. REMAINING pages (parallel as needed)
-6. ASSEMBLY — listings, log.md, .wiki-meta.json, AGENTS pointer
+6. ASSEMBLY — listings, log.md, .wiki-meta.json, AGENTS pointer, repo-root .wikiignore
 7. DELETE wiki/_plan.md
 ```
 
@@ -98,7 +98,7 @@ Relevant source paths: …
 - Critical: may add sub-pages with overview.md + listing index.md
 - Cross-link related pages; prefer bundle-absolute links (/path.md)
 - Write under wiki/
-- Never document secrets or read .env
+- Respect .wikiignore and .gitignore; never document secrets or read .env
 ```
 
 ### 4. Assemble (init)
@@ -108,6 +108,7 @@ Relevant source paths: …
 - Write root `log.md` (Creation entry for this commit)
 - Write `.wiki-meta.json` (`commitHash`, `generatedAt`, `branch`)
 - Ensure AGENTS/CLAUDE wiki pointer ([agents-pointer.md](agents-pointer.md))
+- Write repo-root `.wikiignore` when missing ([wikiignore.md](wikiignore.md))
 - **Delete `wiki/_plan.md`**
 - Report pages created and any caveats
 
@@ -188,4 +189,5 @@ After init or a content-changing update:
 4. `.wiki-meta.json` written/updated when content changed
 5. AGENTS/CLAUDE pointer present
 6. `wiki/_plan.md` deleted
-7. No secrets documented
+7. Repo-root `.wikiignore` present ([wikiignore.md](wikiignore.md))
+8. No secrets documented

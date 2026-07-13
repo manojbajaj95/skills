@@ -25,6 +25,7 @@ In-repo markdown wiki under `wiki/`. Three triggers — pick one from the user r
 
 - **Never wipe** an existing `wiki/`. If it exists with real content, use **update** (even if the user said "generate" or "rebuild"). Only **init** when there is no usable wiki.
 - Prefer **small surgical edits** on update. No formatting-only churn. No-op is success when nothing relevant changed.
+- Respect `.wikiignore` at repo root and all `.gitignore` patterns — never read excluded paths. See [references/wikiignore.md](references/wikiignore.md).
 - Never read or document secrets, credentials, or `.env` files (`.env.example` placeholders are OK).
 
 ## Init (summary)
@@ -35,7 +36,8 @@ In-repo markdown wiki under `wiki/`. Three triggers — pick one from the user r
 4. Execute the plan using [toc-and-layout.md](references/toc-and-layout.md) and [page-writing.md](references/page-writing.md).
 5. Assemble: listings, root `log.md`, `.wiki-meta.json`.
 6. Ensure top-level `AGENTS.md` / `CLAUDE.md` keep a short wiki pointer ([agents-pointer](references/agents-pointer.md)).
-7. Delete `wiki/_plan.md`. Report what was created.
+7. Write repo-root `.wikiignore` when missing ([wikiignore](references/wikiignore.md)).
+8. Delete `wiki/_plan.md`. Report what was created.
 
 ## Update (summary)
 

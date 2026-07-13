@@ -22,6 +22,7 @@ This is my adaptation of droid wiki / Devin's deep wiki / OpenWiki from LangChai
 
 ```
 wiki/
+├── .wikiignore                       # template → copied to repo root on init
 ├── SKILL.md                          # router: init / ask / update
 ├── README.md
 └── references/
@@ -32,5 +33,8 @@ wiki/
     ├── toc-and-layout.md             # TOC, frontmatter/types, listings, layout, tiers
     ├── page-writing.md               # concept page templates and writing quality
     ├── wiki-meta.md                  # .wiki-meta.json (commitHash baseline)
+    ├── wikiignore.md                 # .wikiignore at repo root (read exclusions)
     └── install.md                    # CI auto-refresh (GitHub Actions / GitLab)
 ```
+
+Repos that use this skill also get a **repo-root** `.wikiignore` (separate from `wiki/`) on init — see [references/wikiignore.md](references/wikiignore.md).
