@@ -34,7 +34,7 @@ wiki/
     ├── page-writing.md               # concept page templates and writing quality
     ├── wiki-meta.md                  # .wiki-meta.json (commitHash baseline)
     ├── wikiignore.md                 # .wikiignore at repo root (read exclusions)
-    └── install.md                    # CI auto-refresh (GitHub Actions / GitLab)
+    └── install.md                    # CI auto-refresh (GitHub Actions)
 ```
 
 Repos that use this skill also get a **repo-root** `.wikiignore` (separate from `wiki/`) on init — see [references/wikiignore.md](references/wikiignore.md).
