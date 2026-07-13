@@ -1,78 +1,19 @@
-# Best Practices
+# Best Practices Skill
 
-This repo is a home for the defaults I want in every new repository I set up.
+This repository hosts the `best-practices` AI agent skill. It acts as a single source of truth for standardizing repository setup, enforcing reproducible environments (`uv`, `bun`), and ensuring quality checks (`pre-commit`, linters).
 
-It is meant to capture:
+## Usage
 
-- agent setup instructions
-- reusable skills
-- repo bootstrap checklists
-- coding conventions
-- workflow defaults
-- notes on tools, automation, and operating patterns
-
-## Goal
-
-Instead of re-explaining the same standards in each new project, this repo becomes the source of truth for how I want repos, agents, and supporting workflows to be initialized.
-
-## Installation
-
-### For Humans
-
-Copy and paste this prompt into your LLM agent:
-
-```text
-Install and configure this repository's best practices by following the instructions here:
-https://raw.githubusercontent.com/manojbajaj95/best-practices/main/installation.md
-```
-
-You can read the installation guide yourself, but it is better to let an agent handle the setup.
-
-### For LLM Agents
-
-Fetch the installation guide and follow it:
+To use this skill in your project via `skills.sh`, run:
 
 ```bash
-curl -s https://raw.githubusercontent.com/manojbajaj95/best-practices/main/installation.md
+npx skills add https://github.com/manojbajaj95/best-practices --skill best-practices
 ```
 
-## What Will Live Here
+This will provide your AI agent with all the necessary context to format, lint, and structure your repository according to standardized best practices.
 
-Examples of content that belong in this repo:
+## Included Practices
 
-- `skills/`: reusable skills for agents
-- `agents/`: setup guides, prompts, and operating instructions
-- `templates/`: starter files that can be copied into new repos
-- `checklists/`: setup and review checklists
-- `docs/`: longer-form reference material
-
-## Suggested Structure
-
-```text
-.
-├── README.md
-├── agents/
-├── skills/
-├── templates/
-├── checklists/
-└── docs/
-```
-
-## Principles
-
-- Keep instructions practical and copy-paste friendly.
-- Prefer reusable conventions over one-off notes.
-- Write for future setup speed.
-- Keep agent guidance explicit: role, constraints, workflow, and expectations.
-- Treat this repo as a playbook, not a dumping ground.
-
-## Next Steps
-
-- Add initial agent setup instructions
-- Add the first reusable skills
-- Add a new-repo setup checklist
-- Add starter templates for common repositories
-
-## Status
-
-This is the initial scaffold. The repo will grow into a personal operating manual for repo setup and agent configuration.
+- **Functional**: Enforces `README.md`, `LICENSE`, tests, type checking, and modern linters.
+- **Infrastructure**: Enforces `AGENTS.md`, `pre-commit` hooks, branch protection awareness, and reproducible environments (`uv` for Python, `bun` for Node).
+- **Skills**: Automates the installation of stack-specific agent skills via `autoskills`.
