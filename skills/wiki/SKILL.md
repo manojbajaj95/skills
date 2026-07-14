@@ -1,4 +1,5 @@
 ---
+id: 1288e770-c01e-476c-b985-f8a4cce53a94
 name: wiki
 description: >-
   Maintain an in-repo markdown wiki under wiki/: init a new wiki, surgically
@@ -9,27 +10,26 @@ description: >-
   use when installing CI that runs wiki update on push.
 disable-model-invocation: true
 ---
-
 # Wiki
 
 In-repo markdown wiki under `wiki/`. Three triggers — pick one from the user request:
 
 | Trigger | When | Reference |
-| --- | --- | --- |
+|---------|------|-----------|
 | **init** | No usable `wiki/` yet; user asks to create/generate/bootstrap the wiki | [references/init-and-update.md](references/init-and-update.md) (init path) + [references/structure-and-format.md](references/structure-and-format.md) |
 | **update** | `wiki/` exists; user asks to refresh/sync/update after code changes | [references/init-and-update.md](references/init-and-update.md) (update path) + [references/structure-and-format.md](references/structure-and-format.md) |
 | **ask** | User asks how/where/why about the repo and `wiki/` should be the primary source | [references/ask.md](references/ask.md) |
-
-**Install CI** (auto-update on push): [references/install.md](references/install.md).
+| **install** | User asks to refresh wiki automatically and keep wiki up to date | [references/install.md](https://references/install.md). |
 
 ## Hard rules
 
-- **Never wipe** an existing `wiki/`. If it exists with real content, use **update** (even if the user said "generate" or "rebuild"). Only **init** when there is no usable wiki.
-- Prefer **small surgical edits** on update. No formatting-only churn. No-op is success when nothing relevant changed.
-- Respect `.wikiignore` at repo root and all `.gitignore` patterns — never read excluded paths. See [references/wikiignore.md](references/wikiignore.md).
-- Never read or document secrets, credentials, or `.env` files (`.env.example` placeholders are OK).
+* **Never wipe** an existing `wiki/`. If it exists with real content, use **update** (even if the user said "generate" or "rebuild"). Only **init** when there is no usable wiki.
+* Prefer **small surgical edits** on update. No formatting-only churn. No-op is success when nothing relevant changed.
+* Respect `.wikiignore` at repo root and all `.gitignore` patterns — never read excluded paths. See [references/wikiignore.md](references/wikiignore.md).
+* Never read or document secrets, credentials, or `.env` files (`.env.example` placeholders are OK).
 
 ## Init (summary)
+
 
 1. If `wiki/` already has content → switch to **update**.
 2. Survey the repo (targeted, not every file).
@@ -41,6 +41,7 @@ In-repo markdown wiki under `wiki/`. Three triggers — pick one from the user r
 8. Delete `wiki/_plan.md`. Report what was created.
 
 ## Update (summary)
+
 
 1. Diff against `.wiki-meta.json` `commitHash` (and uncommitted changes).
 2. Soft budget: few source files changed → touch few wiki pages; skip cosmetic edits.

@@ -1,3 +1,6 @@
+---
+id: 476f359c-4ac8-4698-b328-bc147560d933
+---
 # Ask
 
 Answer repository questions using `wiki/` as the primary source instead of re-deriving everything from raw source.
@@ -7,6 +10,7 @@ Answer repository questions using `wiki/` as the primary source instead of re-de
 User asks how/where/why something works, where to change behavior, or to explain a subsystem — and a wiki may exist. Phrases like `/wiki ask`, "how does auth work", "where is billing handled".
 
 ## Steps
+
 
 1. **Check for a wiki.** If `wiki/` is missing or empty, say so and offer **init**. You may still answer from source, but note the wiki is absent.
 2. **Start at the entrypoint.** Read `wiki/index.md`, then follow links into `overview/` and relevant sections. Grep across `wiki/` for the question's key terms to find the canonical concept page.

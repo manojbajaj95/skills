@@ -1,11 +1,15 @@
+---
+id: 2b5bd946-9978-47b3-8171-0df672cababa
+---
 # Wiki Skill
 
 This is my adaptation of droid wiki / Devin's deep wiki / OpenWiki from LangChain. Each lacked something I need:
 
-- Droid / Devin are closed source
-- OpenWiki is not a skill and forces a CLI
+* Droid / Devin are closed source
+* OpenWiki is not a skill and forces a CLI
 
 ## Guiding principles
+
 
 1. Invoke as a skill (a CLI can be bundled later) for a vendor-neutral transport
 2. Build on [OKF (Open Knowledge Format)](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) markdown concepts with YAML frontmatter, listing `index.md` files, and `log.md`, kept in-repo
@@ -13,7 +17,7 @@ This is my adaptation of droid wiki / Devin's deep wiki / OpenWiki from LangChai
 ## Triggers
 
 | Trigger | Purpose |
-| --- | --- |
+|---------|---------|
 | **init** | Create `wiki/` from scratch (only when missing) |
 | **update** | Surgical refresh after code changes |
 | **ask** | Answer questions using `wiki/` as primary source |

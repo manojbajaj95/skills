@@ -1,3 +1,6 @@
+---
+id: 9ad62516-5e2d-4c8d-9147-1a7411793885
+---
 # Wiki meta file
 
 `.wiki-meta.json` at the bundle root tracks generation state for incremental **update** runs. Navigation order lives in `index.md` listings — see [toc-and-layout.md — Page ordering](toc-and-layout.md#page-ordering).
@@ -16,10 +19,10 @@ git rev-parse --abbrev-ref HEAD  # → branch
 ## Fields
 
 | Field | Required | Purpose |
-| --- | --- | --- |
-| `generatedAt` | Yes | ISO 8601 timestamp of this generation/update |
-| `commitHash` | Yes | Source commit documented — baseline for the next **update** diff |
-| `branch` | Yes | Branch name when generated |
+|-------|----------|---------|
+| `generatedAt` | Yes      | ISO 8601 timestamp of this generation/update |
+| `commitHash` | Yes      | Source commit documented — baseline for the next **update** diff |
+| `branch` | Yes      | Branch name when generated |
 
 Do not store page order here. Root and section `index.md` files are the source of truth for TOC sequence.
 

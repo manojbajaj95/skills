@@ -1,19 +1,23 @@
+---
+id: 384e4f85-5556-4b04-aeea-842cad9884d5
+---
 # Setup a repository
 
 Skill for initializing a repository with the baselines you care about — without applying every tool to every repo.
 
 ## What it sets up (when appropriate)
 
-- README.md / LICENSE
-- Tests, type checkers, linters
-- AGENTS.md and short CONTRIBUTING.md
-- Pre-commit hooks
-- CI
-- GitHub branch-protection expectations
-- Stack-appropriate agent skills
-- Optional: release-please, uv trusted publishing to PyPI
+* README.md / LICENSE
+* Tests, type checkers, linters
+* AGENTS.md and short CONTRIBUTING.md
+* Pre-commit hooks
+* CI
+* GitHub branch-protection expectations
+* Stack-appropriate agent skills
+* Optional: release-please, uv trusted publishing to PyPI
 
 ## How it behaves
+
 
 1. Infers repo shape (monorepo, marketing/landing/blogs, backend, library, docs, or a mix)
 2. Infers tech stack and infra from the tree

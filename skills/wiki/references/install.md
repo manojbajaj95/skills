@@ -1,11 +1,14 @@
+---
+id: eb0984ba-0e46-469c-9c78-57c83fd1e561
+---
 # Install wiki CI
 
 Install a CI workflow that runs **wiki update** on each push to the default branch. Like [release-please](https://github.com/googleapis/release-please), keep a single open PR for wiki changes — update it on each run instead of pushing to the default branch.
 
 ## Prerequisites
 
-- GitHub repository
-- Headless agent CLI with CI secrets configured
+* GitHub repository
+* Headless agent CLI with CI secrets configured
 
 ## GitHub Actions
 
@@ -82,6 +85,7 @@ jobs:
 ```
 
 ## Post-install
+
 
 1. Add runner secrets/variables in CI settings
 2. Merge the workflow PR

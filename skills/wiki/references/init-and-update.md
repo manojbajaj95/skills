@@ -1,17 +1,22 @@
+---
+id: 6447d76f-f915-423f-b966-8e298d0912ae
+---
 # Init and update
 
 How to **init** a new `wiki/` or **update** an existing one with small surgical edits. Apply [toc-and-layout.md](toc-and-layout.md), [page-writing.md](page-writing.md), and [wiki-meta.md](wiki-meta.md) (index: [structure-and-format.md](structure-and-format.md)). Wire the agent pointer with [agents-pointer.md](agents-pointer.md).
+
 
 ---
 
 ## Route: init vs update
 
 | Condition | Action |
-| --- | --- |
+|-----------|--------|
 | No `wiki/`, or `wiki/` empty / no concept `.md` files | **Init** |
 | `wiki/` has content (even without `.wiki-meta.json`) | **Update** — never overwrite from scratch |
 | User said "generate" / "rebuild" but wiki exists | **Update**, and say you will not wipe |
 | User insists on starting over | Refuse wipe; offer update, or ask them to delete `wiki/` themselves first |
+
 
 ---
 
@@ -58,6 +63,7 @@ This plan is the work queue. Do not leave it in the tree when finished.
 
 Follow [toc-and-layout.md](toc-and-layout.md) and [page-writing.md](page-writing.md):
 
+
 1. Create listing `index.md` files and concept pages with required frontmatter + `type`.
 2. Section intros use `overview.md` (not content `index.md`).
 3. Foundation first: `overview/overview.md`, `architecture.md`, `getting-started.md`, `glossary.md`, then `how-to-contribute/patterns-and-conventions.md`.
@@ -103,20 +109,21 @@ Relevant source paths: …
 
 ### 4. Assemble (init)
 
-- Cross-link audit; full repo-root paths in file mentions
-- Refresh every directory `index.md` listing from child frontmatter
-- Write root `log.md` (Creation entry for this commit)
-- Write `.wiki-meta.json` (`commitHash`, `generatedAt`, `branch`)
-- Ensure AGENTS/CLAUDE wiki pointer ([agents-pointer.md](agents-pointer.md))
-- Write repo-root `.wikiignore` when missing ([wikiignore.md](wikiignore.md))
-- **Delete `wiki/_plan.md`**
-- Report pages created and any caveats
+* Cross-link audit; full repo-root paths in file mentions
+* Refresh every directory `index.md` listing from child frontmatter
+* Write root `log.md` (Creation entry for this commit)
+* Write `.wiki-meta.json` (`commitHash`, `generatedAt`, `branch`)
+* Ensure AGENTS/CLAUDE wiki pointer ([agents-pointer.md](agents-pointer.md))
+* Write repo-root `.wikiignore` when missing ([wikiignore.md](wikiignore.md))
+* **Delete** `**wiki/_plan.md**`
+* Report pages created and any caveats
 
 ## Update
 
 Surgical maintenance only. Preserve accurate structure and wording.
 
 ### 1. Locate baseline
+
 
 1. Require an existing `wiki/` with content; otherwise send the user to **init**.
 2. Read `.wiki-meta.json` when present. Prefer `commitHash` as baseline.
@@ -137,18 +144,18 @@ If the diff is empty and there are no relevant uncommitted changes → **no-op**
 ### 3. Soft edit budget
 
 | Source change scale | Wiki edit budget |
-| --- | --- |
+|---------------------|------------------|
 | No relevant changes | **No-op** — zero file writes |
-| ~1–5 source files | Prefer **1–2** wiki pages; avoid root listing churn unless navigation changed |
+| \~1–5 source files  | Prefer **1–2** wiki pages; avoid root listing churn unless navigation changed |
 | Moderate / focused feature | Only pages made wrong or incomplete by the diff |
-| Large diff | Still **no wipe**. Batch surgical edits; prioritize inaccurate pages. Skip refresh of lore/stats unless clearly warranted (see [toc-and-layout.md](toc-and-layout.md)) |
+| Large diff          | Still **no wipe**. Batch surgical edits; prioritize inaccurate pages. Skip refresh of lore/stats unless clearly warranted (see [toc-and-layout.md](toc-and-layout.md)) |
 
 Additional rules:
 
-- Prefer replacing a stale sentence over adding paragraphs.
-- **No formatting-only edits** (tables, blank lines, list order, polish) unless that block is already changing for accuracy.
-- Do not refresh `by-the-numbers.md` / `lore.md` / fun-facts unless the delta makes them materially wrong (stats always OK to refresh if you are already editing for a substantial sync and the user asked for a full refresh).
-- Remove concept pages only when the underlying subsystem is gone; update parent listings.
+* Prefer replacing a stale sentence over adding paragraphs.
+* **No formatting-only edits** (tables, blank lines, list order, polish) unless that block is already changing for accuracy.
+* Do not refresh `by-the-numbers.md` / `lore.md` / fun-facts unless the delta makes them materially wrong (stats always OK to refresh if you are already editing for a substantial sync and the user asked for a full refresh).
+* Remove concept pages only when the underlying subsystem is gone; update parent listings.
 
 ### 4. Optional `wiki/_plan.md` (update)
 
@@ -163,25 +170,27 @@ Baseline: <commitHash>
 | --- | --- | --- |
 ```
 
-Execute it, then **delete `wiki/_plan.md`**. Skip the plan file for a one-line fix.
+Execute it, then **delete** `**wiki/_plan.md**`. Skip the plan file for a one-line fix.
 
 ### 5. Edit in place
 
-- Update only planned pages; keep frontmatter `type` / refresh `timestamp` when content changes.
-- Pass existing page content into any sub-agent so it preserves structure.
-- After content changes: refresh affected `index.md` listings, prepend root `log.md`, update `.wiki-meta.json` `commitHash` when source commit advances.
-- Ensure AGENTS/CLAUDE pointer still present.
-- If you made **no** content edits → do not rewrite meta or log (true no-op).
+* Update only planned pages; keep frontmatter `type` / refresh `timestamp` when content changes.
+* Pass existing page content into any sub-agent so it preserves structure.
+* After content changes: refresh affected `index.md` listings, prepend root `log.md`, update `.wiki-meta.json` `commitHash` when source commit advances.
+* Ensure AGENTS/CLAUDE pointer still present.
+* If you made **no** content edits → do not rewrite meta or log (true no-op).
 
 ### 6. Report
 
 List pages changed and why, or that the wiki was already current.
+
 
 ---
 
 ## Shared assembly checklist
 
 After init or a content-changing update:
+
 
 1. Concept pages have frontmatter + `type`
 2. Every directory has listing `index.md`; intros are `overview.md`

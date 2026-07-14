@@ -1,4 +1,5 @@
 ---
+id: 780c9aef-05dc-4e66-834c-3f7cc502ff71
 name: engineering-principles
 description: >-
   Apply shared engineering principles (YAGNI, deep modules, trusted libraries,
@@ -7,7 +8,6 @@ description: >-
   contribution guidelines, how to structure changes, or to follow project
   engineering principles — even if they do not name this skill.
 ---
-
 # Engineering Principles
 
 These principles apply to contributions — human and AI alike. Prefer them when implementing features, reviewing design choices, or writing `CONTRIBUTING.md`.
@@ -36,15 +36,15 @@ Do not add caching, batching, or concurrency before there is a measured performa
 
 ## Don't do it just because you can
 
-Clever is a cost, not a benefit. If a feature, abstraction, or refactor is not directly solving a real problem that exists today, skip it.
+If a feature, abstraction, or refactor is not directly solving a real problem that exists today, skip it.
 
 ## Leave it better than you found it
 
-Every change is an opportunity to fix a nearby typo, remove a dead import, or clarify a confusing comment — not the whole file, just the immediate vicinity. Small improvements compound.
+Every change is an opportunity to fix a nearby typo, remove a dead import, or clarify a confusing comment not the whole file, just the immediate vicinity. Small improvements compound.
 
 ## Comment the why, not the what
 
-Use clear docstrings for public interfaces (Google-style is a good default). Inline comments should explain non-obvious invariants, workarounds, or hidden constraints — not restate what the code already says.
+Use clear google-style docstrings for public interfaces . Inline comments should explain non-obvious invariants, workarounds, or hidden constraints.
 
 ## Update docs alongside code
 

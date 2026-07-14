@@ -1,11 +1,14 @@
+---
+id: 7b999b33-d39c-4fe2-a678-dda51d155974
+---
 # Pre-commit checklist
 
 Use this when the setup plan includes git hooks. Keep configuration minimal and aligned with the repo's existing linters and formatters.
 
 ## When it applies
 
-- Almost any code repo benefits from pre-commit once lint/format tools exist
-- Skip or defer for throwaway experiments if the user does not care about hooks yet
+* Almost any code repo benefits from pre-commit once lint/format tools exist
+* Skip or defer for throwaway experiments if the user does not care about hooks yet
 
 ## Checklist
 

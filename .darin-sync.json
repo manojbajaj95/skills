@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "apiUrl": "https://agentr.getdarin.com",
+  "syncs": [
+    {
+      "folder": "./skills",
+      "collectionId": "skills-kfnuo3o2i1"
+    }
+  ]
+}
